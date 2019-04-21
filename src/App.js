@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
+import Navbar from "./components/Navbar";
+import Jumbotron from "./components/Jumbotron";
 import GameCard from "./components/GameCard";
 import characters from "./characters.json";
 
@@ -11,14 +13,20 @@ class App extends Component {
   render() {
     return (
       <div>
-        <h1 className="font-italic">I'm a test</h1>
-        {this.state.characters.map(character => (
-          <GameCard
-          image={character.image}
-          key={character.id}
-          id={character.id}
-          />
-        ))}
+        <Navbar />
+        <Jumbotron />
+        <div className="container-fluid">
+          <div className="row">
+            {this.state.characters.map(character => (
+              <GameCard
+                image={character.image}
+                key={character.id}
+                id={character.id}
+                name={character.name}
+              />
+            ))}
+          </div>
+        </div>
       </div>
     );
   }

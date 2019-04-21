@@ -1,11 +1,16 @@
-import React, { Component } from "react";
+import React from "react";
 import "./style.css";
 
 function GameCard(props) {
     return (
-        <div>
-            <img src={props.image} />
-        </div>
+    <div className="col-3 m-auto">
+        <img
+        className="card"
+        alt={props.name}
+        src={props.image}
+        id={props.id}
+        />
+    </div>
     );
 }
 
