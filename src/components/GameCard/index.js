@@ -3,7 +3,7 @@ import "./style.css";
 
 function GameCard(props) {
     return (
-    <div className="col-3 m-auto">
+    <div className="col-6 col-sm-4 col-md-3 m-auto">
         <img
         className="card"
         alt={props.name}

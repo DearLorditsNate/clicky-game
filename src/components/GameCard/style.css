@@ -4,29 +4,10 @@
     margin: 1rem;
     border: 5px solid white;
     box-shadow: 0 5px 5px #999, 0 3px 6px #999;
-    /* position: absolute; */
-    /* display: block; */
 }
 
 .card:hover {
     cursor: pointer;
-    animation-name: card-hover-in;
-    animation-duration: 0.15s;
-    height: 185px;
-}
-
-.card:not( :hover ){
-    animation-name: card-hover-out;
-    animation-duration: 0.15s;
-    height: 175px;
-}
-
-@keyframes card-hover-in {
-    from { height: 175px; }
-    to { height: 185px; }
-}
-
-@keyframes card-hover-out {
-    from { height: 185px; }
-    to { height: 175px; }
+    transform: scale(1.05);
+    transition: all .05s ease-in-out;
 }
