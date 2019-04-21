@@ -1,25 +1,24 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import GameCard from "./components/GameCard";
+import characters from "./characters.json";
 
 class App extends Component {
+  state = {
+    characters
+  }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div>
+        <h1 className="font-italic">I'm a test</h1>
+        {this.state.characters.map(character => (
+          <GameCard
+          image={character.image}
+          key={character.id}
+          id={character.id}
+          />
+        ))}
       </div>
     );
   }
