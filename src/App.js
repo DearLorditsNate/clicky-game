@@ -3,6 +3,7 @@ import './App.css';
 import Navbar from "./components/Navbar";
 import Jumbotron from "./components/Jumbotron";
 import GameCard from "./components/GameCard";
+import StickyFooter from "./components/Footer";
 import characters from "./characters.json";
 
 class App extends Component {
@@ -27,6 +28,7 @@ class App extends Component {
             ))}
           </div>
         </div>
+        <StickyFooter />
       </div>
     );
   }
