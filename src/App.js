@@ -11,11 +11,6 @@ class App extends Component {
     characters
   }
 
-  // isClicked = (id) => {
-  //   console.log(id);
-  //   const characters
-  // }
-
   render() {
     return (
       <div>

@@ -6,9 +6,17 @@ class GameCard extends Component {
         clicked: false
     }
 
+    isClicked = (clicked) => {
+        if (clicked) {
+            alert("You lose!");
+        } else {
+            this.setState({clicked: true});
+        }
+    }
+
     render() {
         return (
-        <div className="col-6 col-sm-4 col-md-3 m-auto" onClick={() => {this.setState({clicked: true})}}>
+        <div className="col-6 col-sm-4 col-md-3 m-auto" onClick={() => {this.isClicked(this.state.clicked)}}>
             <img
             className="card"
             alt={this.props.name}
