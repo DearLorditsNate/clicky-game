@@ -8,13 +8,22 @@ import characters from "./characters.json";
 
 class App extends Component {
   state = {
-    characters
-  }
+    characters,
+    score: 0,
+    highScore: 0
+  };
+
+  incrementScore = () => {
+    this.setState({ score: this.state.score + 1 });
+    if (this.state.highScore < this.state.score) {
+      this.setState({ highScore: this.state.highScore + 1 });
+    }
+  };
 
   render() {
     return (
       <div>
-        <Navbar />
+        <Navbar score={this.state.score} highScore={this.state.highScore}/>
         <Jumbotron />
         <div className="container-fluid">
           <div className="row">
@@ -24,6 +33,7 @@ class App extends Component {
                 key={character.id}
                 id={character.id}
                 name={character.name}
+                incrementScore={this.incrementScore}
               />
             ))}
           </div>

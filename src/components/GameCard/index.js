@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+// import ScoreCounter from "../ScoreCounter";
 import "./style.css";
 
 class GameCard extends Component {
@@ -11,6 +12,8 @@ class GameCard extends Component {
             alert("You lose!");
         } else {
             this.setState({clicked: true});
+            // Increment score
+            this.props.incrementScore();
         }
     }
 
