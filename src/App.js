@@ -8,9 +8,29 @@ import characters from "./characters.json";
 
 class App extends Component {
   state = {
-    characters,
     score: 0,
     highScore: 0
+  };
+
+  // Use Fisher-Yates Shuffle to randomize array output
+  shuffle = array => {
+    var currentIndex = array.length,
+      temporaryValue,
+      randomIndex;
+
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+
+      // And swap it with the current element.
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+
+    return array;
   };
 
   incrementScore = () => {
@@ -22,16 +42,16 @@ class App extends Component {
 
   resetGame = () => {
     this.setState({ score: 0 });
-  }
+  };
 
   render() {
     return (
       <div>
-        <Navbar score={this.state.score} highScore={this.state.highScore}/>
+        <Navbar score={this.state.score} highScore={this.state.highScore} />
         <Jumbotron />
         <div className="container-fluid">
           <div className="row">
-            {this.state.characters.map(character => (
+            {this.shuffle(characters).map(character => (
               <GameCard
                 image={character.image}
                 key={character.id}
