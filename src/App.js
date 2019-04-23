@@ -20,6 +20,10 @@ class App extends Component {
     }
   };
 
+  resetGame = () => {
+    this.setState({ score: 0 });
+  }
+
   render() {
     return (
       <div>
@@ -34,6 +38,7 @@ class App extends Component {
                 id={character.id}
                 name={character.name}
                 incrementScore={this.incrementScore}
+                resetGame={this.resetGame}
               />
             ))}
           </div>

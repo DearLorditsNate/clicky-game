@@ -9,6 +9,8 @@ class GameCard extends Component {
     isClicked = (clicked) => {
         if (clicked) {
             alert("You lose!");
+            // Reset game
+            this.props.resetGame();
         } else {
             this.setState({clicked: true});
             // Increment score
