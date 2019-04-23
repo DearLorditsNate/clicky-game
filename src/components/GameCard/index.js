@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-// import ScoreCounter from "../ScoreCounter";
 import "./style.css";
 
 class GameCard extends Component {
