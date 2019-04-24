@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
 import Navbar from "./components/Navbar";
 import Jumbotron from "./components/Jumbotron";
 import GameCard from "./components/GameCard";
@@ -7,10 +7,25 @@ import Footer from "./components/Footer";
 import characters from "./characters.json";
 
 class App extends Component {
-  state = {
-    score: 0,
-    highScore: 0
-  };
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      score: 0,
+      highScore: 0,
+      cards: this.getInitialCharacterSet()
+    };
+  }
+
+  getInitialCharacterSet() {
+    let initialState = {
+      cards: {}
+    };
+
+    return characters.map(character => {
+      return initialState.cards[character.id] = { clicked: false };
+    });
+  }
 
   // Use Fisher-Yates Shuffle to randomize array output
   shuffle = array => {
@@ -33,6 +48,30 @@ class App extends Component {
     return array;
   };
 
+  isClicked = id => {
+    var currentStateCards = this.state.cards;
+    var newCardArr = [];
+
+    if (this.state.cards[id - 1].clicked) {
+      alert("You lose!");
+      this.resetGame();
+    } else {
+      for (var i = 0; i < currentStateCards.length; i++) {
+        if (i === id - 1) {
+          var newState = {
+            clicked: true
+          };
+          currentStateCards[i] = newState;
+          newCardArr.push(currentStateCards[i]);
+        } else {
+          newCardArr.push(currentStateCards[i]);
+        }
+      }
+      this.setState({ cards: newCardArr });
+      this.incrementScore();
+    }
+  };
+
   incrementScore = () => {
     this.setState({ score: this.state.score + 1 });
     if (this.state.highScore <= this.state.score) {
@@ -41,7 +80,7 @@ class App extends Component {
   };
 
   resetGame = () => {
-    this.setState({ score: 0 });
+    this.setState({ score: 0, cards: this.getInitialCharacterSet() });
   };
 
   render() {
@@ -57,8 +96,7 @@ class App extends Component {
                 key={character.id}
                 id={character.id}
                 name={character.name}
-                incrementScore={this.incrementScore}
-                resetGame={this.resetGame}
+                isClicked={this.isClicked}
               />
             ))}
           </div>

@@ -1,35 +1,17 @@
-import React, { Component } from "react";
+import React from "react";
 import "./style.css";
 
-class GameCard extends Component {
-    state = {
-        clicked: false
-    }
-
-    isClicked = (clicked) => {
-        if (clicked) {
-            alert("You lose!");
-            // Reset game
-            this.props.resetGame();
-        } else {
-            this.setState({clicked: true});
-            // Increment score
-            this.props.incrementScore();
-        }
-    }
-
-    render() {
-        return (
-        <div className="col-6 col-sm-4 col-md-3 m-auto" onClick={() => {this.isClicked(this.state.clicked)}}>
-            <img
-            className="card"
-            alt={this.props.name}
-            src={this.props.image}
-            id={this.props.id}
-            />
-        </div>
-        );
-    }
+function GameCard(props) {
+    return (
+    <div className="col-6 col-sm-4 col-md-3 m-auto" onClick={() => {props.isClicked(props.id)}}>
+        <img
+        className="card"
+        alt={props.name}
+        src={props.image}
+        id={props.id}
+        />
+    </div>
+    );
 }
 
 export default GameCard;
