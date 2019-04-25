@@ -13,6 +13,7 @@ class App extends Component {
     this.state = {
       score: 0,
       highScore: 0,
+      message: "Click any image to begin!",
       cards: this.getInitialCharacterSet()
     };
   }
@@ -77,7 +78,15 @@ class App extends Component {
     if (this.state.highScore <= this.state.score) {
       this.setState({ highScore: this.state.highScore + 1 });
     }
+    this.checkWin();
   };
+
+  checkWin = () => {
+    if (this.state.score >= 11) {
+      alert("You win!");
+      this.resetGame();
+    }
+  }
 
   resetGame = () => {
     this.setState({ score: 0, cards: this.getInitialCharacterSet() });
@@ -86,7 +95,11 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Navbar score={this.state.score} highScore={this.state.highScore} />
+        <Navbar
+          score={this.state.score}
+          highScore={this.state.highScore}
+          message={this.state.message}
+        />
         <Jumbotron />
         <div className="container-fluid">
           <div className="row">

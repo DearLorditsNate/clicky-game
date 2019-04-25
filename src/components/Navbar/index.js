@@ -10,7 +10,7 @@ function Navbar(props) {
             <h2 className="col"><a href="/">Clicky Game</a></h2>
           </div>
           <div className="col-4">
-            <h2 className="col">Click and image to begin!</h2>
+            <h2 className="col">{props.message}</h2>
           </div>
           <div className="col-4">
             <h2 className="col"><ScoreCounter score={props.score} highScore={props.highScore}/></h2>
