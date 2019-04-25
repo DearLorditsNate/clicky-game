@@ -54,7 +54,7 @@ class App extends Component {
     var newCardArr = [];
 
     if (this.state.cards[id - 1].clicked) {
-      alert("You lose!");
+      this.setState({message: "Sorry, you guessed wrong!"});
       this.resetGame();
     } else {
       for (var i = 0; i < currentStateCards.length; i++) {
@@ -68,7 +68,7 @@ class App extends Component {
           newCardArr.push(currentStateCards[i]);
         }
       }
-      this.setState({ cards: newCardArr });
+      this.setState({ cards: newCardArr, message: "You guessed correctly!" });
       this.incrementScore();
     }
   };

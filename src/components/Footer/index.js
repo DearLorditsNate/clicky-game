@@ -3,10 +3,10 @@ import "./style.css";
 
 function Footer() {
     return (
-      <footer className="footer mt-5 py-2 footer-theme bg-info">
+      <footer className="footer mt-5 pt-3 pb-1 footer-theme">
         <p className="pl-3">
           Clicky Game!
-            <img alt="React logo" src="./favicon.ico" />
+            <img alt="React logo" src="./favicon.ico" className="footer-img" />
         </p>
       </footer>
     );
