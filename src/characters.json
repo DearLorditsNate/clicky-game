@@ -2,22 +2,22 @@
     {
         "id": 1,
         "name": "Han Solo",
-        "image": "/assets/images/hansolo.jpg"
+        "image": "http://cdn.collider.com/wp-content/uploads/2015/08/star-wars-han-solo-harrison-ford.jpg"
     },
     {
         "id": 2,
         "name": "BB-8",
-        "image": "/assets/images/BB8.jpg"
+        "image": "https://staticshop.o2.co.uk/product/images/star-wars-bb-8-remote-controlled-robot-white_sku-header.png?cb=a9d97ad69428ef8405b15592c176e8d1"
     },
     {
         "id": 3,
         "name": "C-3PO",
-        "image": "/assets/images/C-3PO.png"
+        "image": "https://2.bp.blogspot.com/-ovMA7ln5m3M/TfD1oWF3C0I/AAAAAAAADG4/nHa6GKWCN40/s1600/C3PO_really+shiny.jpg"
     },
     {
         "id": 4,
         "name": "Darth Vader",
-        "image": "/assets/images/darth-vader.jpg"
+        "image": "./assets/images/darth-vader.jpg"
     },
     {
         "id": 5,
