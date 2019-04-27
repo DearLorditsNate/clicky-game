@@ -55,6 +55,7 @@ class App extends Component {
 
     if (this.state.cards[id - 1].clicked) {
       this.setState({message: "Sorry, you guessed wrong!"});
+      // TODO animation/modal for loss?
       this.resetGame();
     } else {
       for (var i = 0; i < currentStateCards.length; i++) {
