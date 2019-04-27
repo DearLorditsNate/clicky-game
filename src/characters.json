@@ -2,17 +2,17 @@
     {
         "id": 1,
         "name": "Han Solo",
-        "image": "/assets/images/hansolo.jpg"
+        "image": "/images/hansolo.jpg"
     },
     {
         "id": 2,
         "name": "BB-8",
-        "image": "/assets/images/BB8.jpg"
+        "image": "/images/BB8.jpg"
     },
     {
         "id": 3,
         "name": "C-3PO",
-        "image": "/assets/images/C-3PO.png"
+        "image": "/images/C-3PO.png"
     },
     {
         "id": 4,
