@@ -2,12 +2,12 @@
     {
         "id": 1,
         "name": "Han Solo",
-        "image": "/assets/images/hansolo.jpg"
+        "image": "./assets/images/hansolo.jpg"
     },
     {
         "id": 2,
         "name": "BB-8",
-        "image": "/assets/images/BB8.jpg"
+        "image": "./assets/images/BB8.jpg"
     },
     {
         "id": 3,
