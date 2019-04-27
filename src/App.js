@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
+import Container from "./components/Container";
+import Row from "./components/Row";
 import Navbar from "./components/Navbar";
 import Jumbotron from "./components/Jumbotron";
 import GameCard from "./components/GameCard";
@@ -102,8 +104,8 @@ class App extends Component {
           message={this.state.message}
         />
         <Jumbotron />
-        <div className="container-fluid">
-          <div className="row">
+        <Container>
+          <Row>
             {this.shuffle(characters).map(character => (
               <GameCard
                 image={character.image}
@@ -113,8 +115,8 @@ class App extends Component {
                 isClicked={this.isClicked}
               />
             ))}
-          </div>
-        </div>
+          </Row>
+        </Container>
         <Footer />
       </div>
     );
